@@ -17,7 +17,7 @@ public class GestoraAbonos extends ArrayList<Abono>{
     }
     
     private void cargarDatosIniciales(){
-        
+        if(this == null)
     }
     
     public boolean agregarAbono(Abono a){
@@ -25,7 +25,9 @@ public class GestoraAbonos extends ArrayList<Abono>{
     }
     
     public Abono[] devolverAbonosPorDNI(){
-        
+        for(int n = 0; n < this.size() - 1; n++){
+            
+        }
     }
     
     public Abono[][] devolverAbonosPorNombre(){

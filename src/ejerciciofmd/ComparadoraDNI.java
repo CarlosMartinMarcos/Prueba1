@@ -15,7 +15,14 @@ public class ComparadoraDNI implements Comparator<Abono>{
 
     @Override
     public int compare(Abono o1, Abono o2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int[] criteriosOrdenacion = {o1.getElAbonado().getDni().compareTo(o2.getElAbonado().getDni()),
+        o.calculaGoles().compareTo(this.calculaGoles())};
+        for (int unCriterio : criteriosOrdenacion) {
+            if (unCriterio != 0) {
+                return unCriterio;
+            }
+        }
+        return 0;
     }
     
 }

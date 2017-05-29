@@ -22,20 +22,28 @@ public class AbonoParcial extends Abono{
     @Override
     public float costePrimerCuatrimestre() {
         if(ciudadano.getEmpadronado()){
-            return TipoAbono.AY.getCoste() * mes.getMensualidades();
+            return TipoAbono.PY.getCoste() * mes.getMensualidades();
         } else{
-            return TipoAbono.AN.getCoste() * mes.getMensualidades();
+            return TipoAbono.PN.getCoste() * mes.getMensualidades();
         }
     }
 
     @Override
     public float costeSegundoCuatrimestre() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(ciudadano.getEmpadronado()){
+            return TipoAbono.PY.getCoste() * mes.getMensualidades();
+        } else{
+            return TipoAbono.PN.getCoste() * mes.getMensualidades();
+        }
     }
 
     @Override
     public float costeTercerCuatrimestre() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(ciudadano.getEmpadronado()){
+            return TipoAbono.PY.getCoste() * mes.getMensualidades();
+        } else{
+            return TipoAbono.PN.getCoste() * mes.getMensualidades();
+        }
     }
     
     

@@ -22,7 +22,7 @@ public class GestoraAbonos extends ArrayList<Abono>{
     }
     
     public boolean agregarAbono(Abono a){
-        
+        return this.add(a);
     }
     
     public Abono[] devolverAbonosPorDNI(){

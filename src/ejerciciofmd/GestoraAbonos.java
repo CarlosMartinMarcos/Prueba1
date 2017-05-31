@@ -6,6 +6,7 @@
 package ejerciciofmd;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -17,7 +18,7 @@ public class GestoraAbonos extends ArrayList<Abono>{
     }
     
     private void cargarDatosIniciales(){
-        if(this == null)
+        
     }
     
     public boolean agregarAbono(Abono a){
@@ -35,14 +36,24 @@ public class GestoraAbonos extends ArrayList<Abono>{
     }
     
     public Abono devuelveAbono(String dni){
-        
+        for (Abono aThi : this) {
+            if(aThi.getElAbonado().getDni().equals(dni)){
+                return aThi;
+            }
+        }
+        return this.get(0);
     }
     
     public String[] devuelveDNIsOrdenados(){
-        
+        String[] devolver = new String[this.size()];
+        for(int n = 0; n < this.size(); n++){
+            devolver[n] = this.get(n).getElAbonado().getDni();
+        }
+        Arrays.sort(devolver);
+        return devolver;
     }
     
     public boolean existeDNI(String dni){
-        
+        return this.stream().anyMatch((aThi) -> (aThi.getElAbonado().getDni().equals(dni)));
     }
 }

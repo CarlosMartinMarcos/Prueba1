@@ -5,6 +5,7 @@
  */
 package ejerciciofmd;
 
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,7 +19,19 @@ public class ModeloTablaListado extends DefaultTableModel{
     
     @Override
     public Object getValueAt(int row, int column) {
-        
+        Abono unAbono = this.gestora.get(row);
+        Object[] objeto = {
+            unAbono.getElAbonado().getDni(),
+            unAbono.getElAbonado().getNombre(),
+            Calendar.YEAR - unAbono.getElAbonado().getFechaNacimiento().getYear(),
+            unAbono.getElAbonado().getEmpadronado(),
+            unAbono.getTipo(),
+            unAbono.getMesDeAlta(),
+            unAbono.costePrimerCuatrimestre(),
+            unAbono.costeSegundoCuatrimestre(),
+            unAbono.costeTercerCuatrimestre()
+        };
+        return objeto[column];
     }
 
     @Override

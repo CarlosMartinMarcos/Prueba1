@@ -15,7 +15,11 @@ public class ComparadoraNombre implements Comparator<Abono>{
 
     @Override
     public int compare(Abono o1, Abono o2) {
-        
+        int criterioOrdenacion = o1.getElAbonado().getNombre().compareTo(o2.getElAbonado().getNombre());
+            if (criterioOrdenacion < 0) {
+                return 1;
+        }
+        return 2;
     }
     
 }

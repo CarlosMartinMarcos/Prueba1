@@ -26,9 +26,7 @@ public class GestoraAbonos extends ArrayList<Abono>{
     }
     
     public Abono[] devolverAbonosPorDNI(){
-        for(int n = 0; n < this.size() - 1; n++){
-            
-        }
+        return Arrays.sort(this, new ComparadoraDNI());
     }
     
     public Abono[][] devolverAbonosPorNombre(){

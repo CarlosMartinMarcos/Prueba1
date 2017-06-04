@@ -15,10 +15,6 @@ public class ComparadoraDNI implements Comparator<Abono>{
 
     @Override
     public int compare(Abono o1, Abono o2) {
-        int criterioOrdenacion = o1.getElAbonado().getDni().compareTo(o2.getElAbonado().getDni());
-            if (criterioOrdenacion < 0) {
-                return 1;
-        }
-        return 2;
+        return o1.getElAbonado().getDni().compareTo(o2.getElAbonado().getDni());
     }
 }

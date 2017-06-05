@@ -7,6 +7,8 @@ package ejerciciofmd;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  *
@@ -26,11 +28,17 @@ public class GestoraAbonos extends ArrayList<Abono>{
     }
     
     public Abono[] devolverAbonosPorDNI(){
-        return Arrays.sort(this, new ComparadoraDNI());a
+//        Abono[] array=this.toArray(new Abono[this.size()]);
+//        Arrays.sort(array, new ComparadoraDNI());
+        Collections.sort(this, new ComparadoraDNI());
+        Abono[] array=this.toArray(new Abono[this.size()]);
+        return array;
     }
     
-    public Abono[][] devolverAbonosPorNombre(){
-        
+    public Abono[] devolverAbonosPorNombre(){
+        Collections.sort(this, new ComparadoraNombre());
+        Abono[] array = this.toArray(new Abono[this.size()]);
+        return array;
     }
     
     public Abono devuelveAbono(String dni){
